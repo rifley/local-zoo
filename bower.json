@@ -1,0 +1,17 @@
+{
+  "name": "local-zoo",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Riley Watts <rileywatts.yes@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
