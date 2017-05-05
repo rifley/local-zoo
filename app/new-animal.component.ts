@@ -6,7 +6,7 @@ import { Animal } from './animal.model';
   template:  `
   <div class="newAnimal">
     <h1>Lets make an animal</h1>
-    <form class="animalForm">
+    <form>
       <div class="form-group">
         <label for="species">Species</label>
         <input type="text" id="species" #species>
@@ -43,7 +43,7 @@ import { Animal } from './animal.model';
         <label for="dislikes">Dislikes</label>
         <input type="text" id="dislikes" #dislikes>
       </div>
-      <button type="button" (click)="submitForm(species.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value);">Add</button>
+      <button class="btn btn-info" type="button" (click)="submitForm(species.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value);">Add</button>
     </form>
     </div>
     `
