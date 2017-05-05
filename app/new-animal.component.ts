@@ -9,39 +9,39 @@ import { Animal } from './animal.model';
     <form>
       <div class="form-group">
         <label for="species">Species</label>
-        <input type="text" id="species" #species>
+        <input class="form-control" type="text" id="species" #species>
       </div>
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" #name>
+        <input class="form-control" type="text" id="name" #name>
       </div>
       <div class="form-group">
         <label for="age">Age</label>
-        <input type="number" id="age" #age>
+        <input class="form-control" type="number" id="age" #age>
       </div>
       <div class="form-group">
         <label for="diet">Diet</label>
-        <input type="text" id="diet" #diet>
+        <input class="form-control" type="text" id="diet" #diet>
       </div>
       <div class="form-group">
         <label for="location">Location</label>
-        <input type="text" id="location" #location>
+        <input class="form-control" type="text" id="location" #location>
       </div>
       <div class="form-group">
         <label for="caretakers">Caretakers</label>
-        <input type="number" id="caretakers" #caretakers>
+        <input class="form-control" type="number" id="caretakers" #caretakers>
       </div>
       <div class="form-group">
         <label for="sex">Sex</label>
-        <input type="text" id="sex" #sex>
+        <input class="form-control" type="text" id="sex" #sex>
       </div>
       <div class="form-group">
         <label for="likes">Likes</label>
-        <input type="text" id="likes" #likes>
+        <input class="form-control" type="text" id="likes" #likes>
       </div>
       <div class="form-group">
         <label for="dislikes">Dislikes</label>
-        <input type="text" id="dislikes" #dislikes>
+        <input class="form-control" type="text" id="dislikes" #dislikes>
       </div>
       <button class="btn btn-info" type="button" (click)="submitForm(species.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value);">Add</button>
     </form>
