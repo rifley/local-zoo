@@ -5,7 +5,7 @@ import { Animal } from './animal.model';
   selector: 'new-animal',
   template:  `
   <div class="newAnimal">
-    <h1> Lets make an animal </h1>
+    <h1>Lets make an animal</h1>
     <form class="animalForm">
       <div class="form-group">
         <label for="species">Species</label>
@@ -43,12 +43,17 @@ import { Animal } from './animal.model';
         <label for="dislikes">Dislikes</label>
         <input type="text" id="dislikes" #dislikes>
       </div>
-      <button (click)="submitForm(species)"
+      <button type="button" (click)="submitForm(species.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value);">Add</button>
     </form>
     </div>
     `
 })
 
 export class NewAnimalComponent {
+  @Output() newAnimalSender = new EventEmitter();
 
+  submitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string) {
+    var newAnimalToAdd: Animal = new Animal(species, name, age, diet, location, caretakers, sex, likes, dislikes);
+    this.newAnimalSender.emit(newAnimalToAdd);
+  }
 }
