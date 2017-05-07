@@ -1,4 +1,13 @@
 .newAnimal {
   border: solid 2px black;
   padding: 5px;
+  width: 60%;
+}
+
+.form-group {
+  width: 80%;
+  height: 6%;
+  margin: 1%;
+  padding: auto;
+
 }

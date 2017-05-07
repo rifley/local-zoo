@@ -4,9 +4,9 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'app-root',
   template: `
-  <h1>Welcome to the zoo motherfucker</h1>
-  <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
+  <h1>Welcome to the zoo</h1>
   <animal-list [childAnimalList]="animals" (clickSender)="editAnimal($event)"></animal-list>
+  <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
   <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
   `
 })
