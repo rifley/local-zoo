@@ -4,10 +4,14 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'app-root',
   template: `
-  <h1>Welcome to the zoo</h1>
-  <animal-list [childAnimalList]="animals" (clickSender)="editAnimal($event)"></animal-list>
-  <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
-  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
+  <div class="container">
+    <div class="header">
+      <h1>Zoo knew?</h1>
+    </div>
+      <animal-list [childAnimalList]="animals" (clickSender)="editAnimal($event)"></animal-list>
+      <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
+      <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
+    </div>
   `
 })
 
@@ -18,9 +22,12 @@ export class AppComponent {
   ];
 
   selectedAnimal = null;
+  makeNewAnimal = null;
 
-  editAnimal(slectedAnimalFromList) {
-    this.selectedAnimal = slectedAnimalFromList;
+
+
+  editAnimal(selectedAnimalFromList) {
+    this.selectedAnimal = selectedAnimalFromList;
   }
 
   addAnimal(newAnimalFromChild: Animal) {

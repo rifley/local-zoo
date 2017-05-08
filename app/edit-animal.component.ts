@@ -5,21 +5,22 @@ import { Animal } from './animal.model';
   selector: 'edit-animal',
   template: `
   <div *ngIf="childSelectedAnimal">
-    <hr>
    <h3>Edit Animal</h3>
-    <div>
-      <label>Name:</label>
-      <input [(ngModel)]="childSelectedAnimal.name">
+    <div class="animalEdit">
+      <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" [(ngModel)]="childSelectedAnimal.name">
+      </div>
+      <div class="form-group">
+        <label>Age:</label>
+        <input class="form-control" [(ngModel)]="childSelectedAnimal.age">
+      </div>
+      <div class="form-group">
+        <label>Caretakers:</label>
+        <input class="form-control" [(ngModel)]="childSelectedAnimal.caretakers">
+      </div>
+      <button (click)="doneButtonClicked()">Done</button>
     </div>
-    <div>
-      <label>Age:</label>
-      <input [(ngModel)]="childSelectedAnimal.age">
-    </div>
-    <div>
-      <label>Caretakers:</label>
-      <input [(ngModel)]="childSelectedAnimal.caretakers">
-    </div>
-    <button (click)="doneButtonClicked()">Done</button>
   </div>
   `
 })

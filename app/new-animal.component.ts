@@ -24,16 +24,16 @@ import { Animal } from './animal.model';
         <input class="form-control" type="text" id="diet" #diet>
       </div>
       <div class="form-group">
-        <label for="location">Location</label>
-        <input class="form-control" type="text" id="location" #location>
+        <label>Location</label>
+        <input class="form-control" type="text" #location>
       </div>
       <div class="form-group">
-        <label for="caretakers">Caretakers</label>
-        <input class="form-control" type="number" id="caretakers" #caretakers>
+        <label>Caretakers</label>
+        <input class="form-control" type="number" #caretakers>
       </div>
       <div class="form-group">
-        <label for="sex">Sex</label>
-        <input class="form-control" type="text" id="sex" #sex>
+        <label>Sex</label>
+        <input class="form-control" type="text" #sex>
       </div>
       <div class="form-group">
         <label for="likes">Likes</label>
@@ -43,7 +43,7 @@ import { Animal } from './animal.model';
         <label for="dislikes">Dislikes</label>
         <input class="form-control" type="text" id="dislikes" #dislikes>
       </div>
-      <button class="btn btn-info" type="submit" (click)="submitForm(species.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value); species.value=''; name.value=''; age.value=''; diet.value=''; location.value=''; caretakers.value=''; sex.value=''; likes.value=''; dislikes.value='' ">Add</button>
+      <button class="newAnimalButton" type="submit" (click)="submitForm(species.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value); species.value=''; name.value=''; age.value=''; diet.value=''; location.value=''; caretakers.value=''; sex.value=''; likes.value=''; dislikes.value='' ">Add</button>
     </form>
     </div>
     `
@@ -57,4 +57,5 @@ export class NewAnimalComponent {
     var newAnimalToAdd: Animal = new Animal(species, name, age, diet, location, caretakers, sex, likes, dislikes);
     this.newAnimalSender.emit(newAnimalToAdd);
   }
+
 }
