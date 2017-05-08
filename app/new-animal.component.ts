@@ -1,10 +1,10 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Animal } from './animal.model';
 
 @Component({
   selector: 'new-animal',
   template:  `
-  <div class="newAnimal">
+  <div class="newAnimal" *ngIf="childMakeAnimal">
     <h1>Lets make an animal</h1>
     <form>
       <div class="form-group">
@@ -44,18 +44,30 @@ import { Animal } from './animal.model';
         <input class="form-control" type="text" id="dislikes" #dislikes>
       </div>
       <button class="newAnimalButton" type="submit" (click)="submitForm(species.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, dislikes.value); species.value=''; name.value=''; age.value=''; diet.value=''; location.value=''; caretakers.value=''; sex.value=''; likes.value=''; dislikes.value='' ">Add</button>
+      <button (click)="hideForm()" type="button">Close</button>
     </form>
     </div>
+    <button type="button" (click)="showForm()">New Animal</button>
     `
 })
 
 export class NewAnimalComponent {
+  @Input() childMakeAnimal: boolean;
   @Output() newAnimalSender = new EventEmitter();
+  @Output() newAnimalShowHideSender = new EventEmitter();
 
   submitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: number, sex: string, likes: string, dislikes: string) {
 
     var newAnimalToAdd: Animal = new Animal(species, name, age, diet, location, caretakers, sex, likes, dislikes);
     this.newAnimalSender.emit(newAnimalToAdd);
+  }
+
+  showForm() {
+    this.newAnimalShowHideSender.emit(true);
+  }
+
+  hideForm() {
+    this.newAnimalShowHideSender.emit(false);
   }
 
 }

@@ -10,7 +10,7 @@ import { Animal } from './animal.model';
     </div>
       <animal-list [childAnimalList]="animals" (clickSender)="editAnimal($event)"></animal-list>
       <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
-      <new-animal (newAnimalSender)="addAnimal($event)"></new-animal>
+      <new-animal [childMakeAnimal]="makeNewAnimal"(newAnimalSender)="addAnimal($event)" (newAnimalShowHideSender)="animalForm($event)"></new-animal>
     </div>
   `
 })
@@ -24,7 +24,9 @@ export class AppComponent {
   selectedAnimal = null;
   makeNewAnimal = null;
 
-
+  animalForm(hideOrShow) {
+    this.makeNewAnimal = hideOrShow;
+  }
 
   editAnimal(selectedAnimalFromList) {
     this.selectedAnimal = selectedAnimalFromList;
